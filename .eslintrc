@@ -1,0 +1,31 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "max-len": [1, 80, 2, {"ignoreComments": true}],
+      "prop-types": [0],
+      "linebreak-style": 0,
+      "no-underscore-dangle": "off",
+      "no-restricted-globals": "off",
+      "no-return-assign": "warn",
+      "react/prop-types": "off",
+      "react/jsx-closing-tag-location": "warn",
+      "jsx-a11y/label-has-for": "warn",
+      "no-param-reassign": "warn",
+      "no-restricted-syntax": "warn",
+      "guard-for-in": "warn",
+      "jsx-a11y/no-static-element-interactions": "warn",
+      "jsx-a11y/click-events-have-key-events": "warn",
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+      "react-hooks/exhaustive-deps": "warn" // Проверяем зависимости эффекта
+    },
+    "plugins": [
+      "react",
+      "react-hooks"
+    ],
+    "extends": ["airbnb"]
+  }

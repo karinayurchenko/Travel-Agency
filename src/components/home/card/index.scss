@@ -1,0 +1,29 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles//mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+.card{
+    width: 20%;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    background-color: $elements-bg;
+    border: 1px solid $main-border-color;
+    @include font-style($align:left);
+
+    &__title{
+        @include font-style($size:17px,  $color:$main-color-text, $bold:400, $family:$main-fonts, $spacing: .5px);
+        margin-bottom: 20px;
+    }
+
+    &__statistic{
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: $hotels-bg;
+        padding: 6px 12px;
+        border: 1px solid transparent; 
+        border-radius: 45%;
+
+        @include font-style($size:17px,  $color:$hotels-color, $bold:400, $family:$main-fonts);
+    }
+
+}

@@ -1,0 +1,29 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.portal{
+    width: 19%;
+    height: 55px;
+    
+    
+    background-color: $elements-bg;
+    border: 1px solid $main-border-color;
+
+    &__buttons{
+        @include display-flex();
+        padding: 5px 5px;
+        margin: 0 ;
+        
+
+        border-bottom: 1px solid $main-border-color;
+        @include font-style($size:14px,  $color:$main-color-text, $family:$main-fonts);  
+        
+        .icon{
+        @include font-style($size:14px,  $color:$icons-color, $family:$main-fonts);     
+        
+        }
+        .button{
+            padding-left: 10px;
+        }
+    }
+}

@@ -5,7 +5,7 @@
 
 .sidebar{
     width: 20%;
-    min-height: 100vh;
+    min-height: calc(100vh - 3px);
     background-color: $elements-bg;
     border: 1px solid $main-border-color;
     

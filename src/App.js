@@ -7,6 +7,7 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Register from './pages/register';
 import Profile from './pages/profile';
+import Tours from './pages/tours';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Switch>
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/profile"><Profile /></Route>
+                <Route exact path="/tours"><Tours /></Route>
               </Switch>
             </div>
           </div>

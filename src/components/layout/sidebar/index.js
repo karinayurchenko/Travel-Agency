@@ -25,7 +25,7 @@ const Sidebar = () => (
   <div className="sidebar">
     <div className="sidebar__wrapper">
       <img src={Logo} alt="logo" />
-      <h2>Adminator</h2>
+      <h2>Administrator</h2>
     </div>
     <div className="sidebar__list">
       {links.map((el) => (
@@ -33,7 +33,7 @@ const Sidebar = () => (
           <div className="items__icon">
             <i className={el.icon} />
           </div>
-          <NavLink exact to={el.link} href={el.link} activeClassName="activeLink">
+          <NavLink exact to={el.link} href={el.link} className="activeLink">
             {el.label}
           </NavLink>
         </div>

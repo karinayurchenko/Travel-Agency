@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '../../components/home/card';
-import Portal from '../../components/home/portal';
 import './index.scss';
 
 const Home = () => (
@@ -8,7 +7,6 @@ const Home = () => (
     <Card />
     <Card />
     <Card />
-    <Portal />
   </div>
 );
 

@@ -6,19 +6,24 @@
     max-width: 100%;
     padding: 10px 15px;
     background-color: $elements-bg;
-    border: 1px solid $main-border-color;
+    @include border-style (1px solid $main-border-color);
 
     &__inner{
         @include display-flex($justify:space-between, $align:center);
             .leftBlock{
-                @include font-style($color:$icons-color);  
+            @include font-style($color:$icons-color);  
             }
             
             .rightBlock{
+            @include position(relative);
             width: 15%;
             max-width: 100%;
             @include display-flex($justify:space-between, $align:center);
-            @include font-style($color:$icons-color);      
+            @include font-style($color:$icons-color);  
+                .users__block{
+                    @include display-flex($align:center);
+                
+                }
                 &__avatar{
             
                         *{
@@ -26,7 +31,8 @@
                             height: 40px;
                             object-fit: cover;
                             object-position: center;
-                            border-radius: 50%; 
+                            @include border-style ($radius:50%); 
+                            margin-right: 15px;
                         }
 
                     }
@@ -37,4 +43,8 @@
 
              }
     }
+    .portalBlock{
+        @include position(absolute,55px);
+    }
 }
+

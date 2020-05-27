@@ -21,7 +21,7 @@
             object-position: center;
             @include border-style ($radius:50%);                    
                             
-        }
+        } 
     }
     &__list{
         @include display-flex($direction:column);
@@ -35,14 +35,28 @@
             margin-bottom: 20px;
             
            .items__icon{
+               @include font-style(18px);
                margin-right: 10px;
            }
            .activeLink{
             text-decoration: none;
-            @include font-style($size:14px,  $color:$main-color-text, $bold:bold, $family:$main-fonts);  
+            @include font-style($size:18px,  $color:$main-color-text, $bold:bold, $family:$main-fonts);  
            }
         }
     }
 
 
+}
+
+.closed__sidebar{
+   width: 70px;
+    
+   .sidebar__list__item {
+      margin: 10px auto;
+
+      .items__icon{
+        margin-right: 10px;
+        @include font-style(18px);
+       }
+    }
 }

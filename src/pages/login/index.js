@@ -1,20 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ImgBg from '../../assets/img/login.png';
+import Details from '../../constants/login';
 import './index.scss';
-
-const details = [
-  {
-    type: 'text',
-    name: 'email',
-    placeholder: 'Your e-mail',
-  },
-  {
-    type: 'password',
-    name: 'password',
-    placeholder: 'Your password',
-  },
-];
 
 const Login = () => (
   <div className="login">
@@ -29,7 +17,7 @@ const Login = () => (
         first.
       </h3>
       <form className="login__details">
-        {details.map((el) => (
+        {Details.map((el) => (
           <div className="login__inner">
             <input type={el.type} name={el.name} placeholder={el.placeholder} required />
           </div>

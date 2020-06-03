@@ -8,6 +8,8 @@ import Login from './pages/login';
 import Register from './pages/register';
 import Profile from './pages/profile';
 import Tours from './pages/tours';
+import Hotels from './pages/hotels';
+import NewTour from './pages/newTour';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/profile"><Profile /></Route>
                 <Route exact path="/tours"><Tours /></Route>
+                <Route exact path="/hotels"><Hotels /></Route>
+                <Route exact path="/newTour"><NewTour /></Route>
               </Switch>
             </div>
           </div>

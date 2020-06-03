@@ -2,12 +2,12 @@ import React from 'react';
 import {
   inputs, details, addresses, cities,
 } from '../../constants/profile';
-import Validator from '../../helpers/validator';
+// import Validator from '../../helpers/validator';
 import './index.scss';
 
 const Profile = () => {
-  Validator.isEmailValid('')
-  return (
+  // Validator.isEmailValid('')
+  return ( 
   <div className="profile">
     <div className="profile__section">
       <div className="section__title">Basic Info</div>

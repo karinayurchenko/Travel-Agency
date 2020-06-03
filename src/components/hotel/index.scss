@@ -1,0 +1,77 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+.hotel__item{
+    @include display-flex();
+    @include border-style( $border-top: 1px dotted $main-border-color, $border-bottom: 1px dotted $main-border-color);
+    margin: 30px 0px 30px 50px;
+    
+    .hotel__img{
+        
+       img{
+         display: block;
+         width: 100%;
+         object-fit: cover;
+         object-position: center; 
+        }
+    }
+
+    .hotel__details{
+        @include display-flex($direction:column);
+        @include font-style($size:17px, $color:black, $family:$fonts);
+        width: 60%;
+        padding-left: 15px ;
+        text-align: left;
+        background-color: $elements-bg;
+        
+
+        .hotel__title{
+        @include font-style($size:25px, $color:$hotels-fonts-color, $bold:bold, $family:$fonts);
+        margin-top: 15px;
+
+        }
+
+        .hotel__subtitle{
+        @include font-style($size:15px, $color:$hotels-fonts-color, $bold:600, $family:$fonts);
+
+        }
+
+        .hotel__rating{
+            @include font-style($size:15px, $color:$hotels-fonts-color, $bold:600, $family:$fonts);
+            margin-top: 20px;
+
+            .rating__icons{
+             @include font-style($size:15px, $color:$btn-color-tours, $bold:300, $family:$fonts);
+            }
+        }
+
+    }
+
+    .hotel__about{
+        @include font-style($size:22px, $bold:700, $family:$fonts);  
+       
+        width: 20%;
+        padding-top: 50px;
+
+     .btn{
+        @include font-style($size:10px, $color:$btn-color-tours, $bold:600, $family:$fonts, $spacing:.5px);
+        @include border-style (1px solid $btn-color-tours);
+        @include border-style($radius:10px);
+        width: 50%;
+        padding:10px;
+        margin-top: 30px;
+        outline: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: $main-bg;
+
+       }  
+      
+       .btn:hover{
+        @include font-style($size:10px, $color:$elements-bg, $bold:600, $family:$fonts, $spacing:.5px);
+        background-color: $btn-color-hover-hotels;
+       }
+    
+    }  
+}

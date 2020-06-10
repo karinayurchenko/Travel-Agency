@@ -94,5 +94,5 @@
     .btn:hover{
         @include font-style($size:15px, $color:$elements-bg, $family:$main-fonts, $spacing:.5px);
         background-color: $btn-color-hover-tours;
-       }
+    }
 }

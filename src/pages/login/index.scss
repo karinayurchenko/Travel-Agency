@@ -35,7 +35,7 @@
         @include font-style($size:12px, $color:$icons-color, $bold:bold, $family:$main-fonts);
       
       } 
-    }
+    } 
 
     input{
       @include border-style (1px solid $main-border-color, $radius:5px);
@@ -54,11 +54,16 @@
       @include font-style($size:12px, $color:$login-color-text-input, $bold:bold, $family:$main-fonts, $spacing:1px);
     }
 
-    .login__forgot{
+    .forgot{
+      @include display-flex();
+      float: right;
+
+      .login__forgot{
       @include font-style($size:12px, $color:$login-color-text-input, $family:$main-fonts);
       text-align: right;
+      }
     }
-
+    
     .login__inner-remember{
       @include display-flex();
       @include font-style($size:12px, $color:$login-color-text, $bold:bold, $family:$main-fonts);
@@ -67,7 +72,6 @@
       input{
         width: auto;
       }
-
     }
     .login__btn{
       @include border-style($radius:5px);
@@ -76,7 +80,10 @@
       box-sizing: border-box;
       border-color: transparent;
       cursor: pointer;
+      outline: none;
       background-color: $btn-bg;
+      width: 100%;
+      min-width: 110px;
     }
   } 
 }

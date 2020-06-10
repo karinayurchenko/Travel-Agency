@@ -29,8 +29,9 @@ const Register = () => {
       firstName: formData.firstName !== null && (Validator.isNameValid(formData.firstName) ? null : 'valid  first name is required'),
       lastName: formData.lastName !== null && (Validator.isNameValid(formData.lastName) ? null : 'valid  last name is required'),
       password: formData.password !== null && (Validator.isPasswordValid(formData.password) ? null : 'valid password is required'),
-      confirmPassword: formData.confirmPassword !== null && (formData.password === formData.confirmPassword ? null : 'Password not matching')|| null,
+      confirmPassword: formData.confirmPassword !== null && (formData.password === formData.confirmPassword ? null : 'Password not matching'),
     });
+  console.log(formData.password === formData.confirmPassword)  
   };
 
   const handleChanges = (name) => (e) => {
@@ -50,7 +51,7 @@ const Register = () => {
   };
 
 
-  return (
+  return ( 
     <div className="register">
       <div className="register__img">
         <img src={ImgBg} alt="nature" />

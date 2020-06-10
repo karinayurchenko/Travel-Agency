@@ -10,6 +10,7 @@ import Profile from './pages/profile';
 import Tours from './pages/tours';
 import Hotels from './pages/hotels';
 import NewTour from './pages/newTour';
+import NewHotel from './pages/newHotel';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route exact path="/tours"><Tours /></Route>
                 <Route exact path="/hotels"><Hotels /></Route>
                 <Route exact path="/newTour"><NewTour /></Route>
+                <Route exact path="/newHotel"><NewHotel /></Route>
               </Switch>
             </div>
           </div>

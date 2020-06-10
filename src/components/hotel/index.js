@@ -7,16 +7,12 @@ const Hotel = ({ data }) => (
       <img src={data.url} alt="" />
     </div>
     <div className="hotel__details">
-      <div className="hotel__title">{data.title}</div>
-      <div className="hotel__subtitle">{data.subtitle}</div>
+      <div className="hotel__title">{data.name}</div>
+      <div className="hotel__subtitle">{data.description}</div>
       <div className="hotel__rating">
         <div className="rating__label">Rating:</div>
         <div className="rating__icons">
-          <i className="fas fa-star" />
-          <i className="fas fa-star" />
-          <i className="fas fa-star" />
-          <i className="fas fa-star" />
-          <i class="far fa-star"></i>
+          {Array.from({ length: 5 }).map((el, index) => <i className={`${index >= data.averageRating ? 'far' : 'fas'} fa-star`} />)}
         </div>
       </div>
     </div>

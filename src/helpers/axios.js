@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
-const baseURL = 'https://a93c6e0397e9.ngrok.io';
+const baseURL = 'http://ef24faf357b4.ngrok.io';
 const instance = axios.create({
   baseURL,
   headers: {

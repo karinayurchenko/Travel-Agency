@@ -34,7 +34,7 @@ const NewTour = () => (
       <option value="">Basic</option>
       <option value="">Parties</option>
       <option value="">Swimming pool</option>
-      <option value="">Beach</option>
+      <option value="">Beach</option> 
     </select>
 
     <div className="newTour__booking-date">

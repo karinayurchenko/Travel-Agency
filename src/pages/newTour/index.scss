@@ -111,7 +111,7 @@
             box-sizing: border-box;
             outline: none;
         }
-
+ 
         input{
             @include border-style (1px solid $main-border-color);
             @include border-style($radius:0 5px 5px 0);

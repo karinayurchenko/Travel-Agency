@@ -4,7 +4,7 @@
 .portal{
     @include background($elements-bg);
     @include border-style (1px solid $main-border-color);
-    height: 55px;
+    max-width: 100%;
     
     &__buttons{
         @include display-flex();
@@ -12,7 +12,7 @@
         @include font-style($size:14px,  $color:$main-color-text, $family:$main-fonts);  
         padding: 5px 5px;
         margin: 0 ;
-        width: 170px;
+        min-width: 170px;
 
         .icon{
         @include font-style($size:14px,  $color:$icons-color, $family:$main-fonts);     

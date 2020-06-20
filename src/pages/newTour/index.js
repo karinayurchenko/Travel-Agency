@@ -26,7 +26,7 @@ const NewTour = () => (
         <label>
           Address
         </label>
-        <input type="address" name="address" placeholder="country,city,street (not editable field, it;s hotel)" />
+        <input type="address" name="address" placeholder="country,city,street (not editable field)" />
       </div>
     </form>
 

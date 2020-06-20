@@ -18,7 +18,7 @@ const Nav = () => {
       <div className="nav__inner">
         <div className="leftBlock">
           <div className="leftBlock__icon" onClick={modifySidebar}>
-            <i className="fas fa-bars" />
+            <i className="fas fa-bars " />
           </div>
         </div>
         <div className="rightBlock">
@@ -32,7 +32,7 @@ const Nav = () => {
             <div className="rightBlock__username"> Jonh Doe</div>
           </div>
           {open ? <div className="portalBlock"><Portal /></div> : null}
-        </div>
+        </div> 
       </div>
     </div>
 

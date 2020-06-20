@@ -8,17 +8,58 @@
     min-height: calc(100vh - 3px);
     @include background($elements-bg);
     @include border-style (1px solid $main-border-color);
+    // @include position(fixed);
+    @media (max-width:1024px){  
+        width: 200px;
+        background-color: $elements-bg;
+        
+        .sidebar__list__item {
+            margin: 10px auto;
+      
+            .items__icon{
+              @include font-style(18px);
+              margin-right: 10px;
+             }
+          }
+        }
+    @media (max-width:768px){
+        width: 70px;
+        .sidebar__list__item {
+            margin: 10px auto;
+      
+            .items__icon{
+              @include font-style(18px);
+              margin-right: 10px;
+             }
+          }
+        }        
     
     &__wrapper{
         @include display-flex($align:center);
-        @include font-style($size:12px,  $color:$main-color-text, $family:$main-fonts);
+        @include font-style($size:12px, $color:$main-color-text, $family:$main-fonts);
         @include border-style ($border-bottom: 1px solid $main-border-color);
-       
+        @media (max-width:1024px){
+            @include font-style($size:12px, $color:$main-color-text, $family:$main-fonts);      
+        }
+        @media (max-width:768px){
+            @include font-style($size:10px, $color:$main-color-text, $family:$main-fonts);      
+        }
+
         img{ 
             @include border-style ($radius:50%);                    
             object-fit: cover;
-            object-position: center;                  
+            object-position: center; 
+            @media (max-width:768px){
+                @include font-style($size:9px, $color:$icons-color, $family:$main-fonts); 
+            }
         } 
+
+        h2{
+            padding: 5px;
+            @media (max-width:768px){
+                display:none;
+            }
+        }
     }
 
     &__list{
@@ -27,6 +68,15 @@
         @include font-style($size:14px,  $color:$icons-color, $family:$main-fonts);  
         margin-top: 40px;
         margin-left: 15px;
+        text-align: left;
+
+        @media (max-width:1024px){
+            @include font-style($size:12px,  $color:$icons-color, $family:$main-fonts);       
+        }
+        @media (max-width:768px){
+            @include font-style($size:9px, $color:$icons-color, $family:$main-fonts);       
+        }
+        
 
         &__item{
             @include display-flex();
@@ -39,6 +89,7 @@
            .activeLink{
             @include font-style($size:18px,  $color:$main-color-text, $bold:bold, $family:$main-fonts);  
             text-decoration: none;
+
            }
         }
     }

@@ -16,7 +16,7 @@ const Sidebar = () => {
   const closeSidebar = () => {
     dispatch(toggleSidebar(false));
   };
-
+ 
   return (
     <div className={opened ? 'sidebar' : ' sidebar closed__sidebar'} onMouseEnter={openSidebar} onMouseLeave={closeSidebar}>
       <div className="sidebar__wrapper">

@@ -2,7 +2,7 @@ export const inputs = [
   {
     label: 'Email address',
     type: 'text',
-    name: 'mail',
+    name: 'email',
     placeholder: 'Enter email',
   },
   {
@@ -14,13 +14,13 @@ export const inputs = [
   {
     label: 'First name',
     type: 'text',
-    name: 'name',
+    name: 'firstName',
     placeholder: 'First name',
   },
   {
     label: 'Last name',
     type: 'text',
-    name: 'name',
+    name: 'lastName',
     placeholder: 'Last name',
   },
 ];
@@ -29,7 +29,7 @@ export const details = [
   {
     label: 'Contact email',
     type: 'email',
-    name: 'email',
+    name: 'contactEmail',
     placeholder: 'Enter email',
   },
   {
@@ -44,14 +44,14 @@ export const details = [
 export const addresses = [
   {
     label: ' Address',
-    type: 'address',
-    name: 'address',
+    type: 'text',
+    name: 'address1',
     placeholder: '1234 Main St',
   },
   {
     label: ' Address 2',
-    type: 'address',
-    name: 'address',
+    type: 'text',
+    name: 'address2',
     placeholder: 'Apartment, studio or floor',
   },
 
@@ -71,6 +71,6 @@ export const cities = [
   {
     label: 'Zip',
     type: 'text',
-    name: 'text',
+    name: 'zip',
   },
 ];

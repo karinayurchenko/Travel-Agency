@@ -18,10 +18,19 @@
     &__type{
         @include display-flex($justify:space-between);
         margin-bottom: 15px;
-        
 
+        @media (max-width:768px){
+            @include display-flex($direction:column);
+        }
+        
         .type__inner{
-            width: 48%;
+            width: 100%;
+            max-width: 400px;
+            padding: 5px;
+            
+            @media (max-width:768px){
+                margin-bottom: 10px;
+            }
 
             .type__label{
                 margin-bottom: 5px;
@@ -53,8 +62,16 @@
             box-sizing: border-box;
             padding:10px 0 10px 10px;
             outline: none;
-            cursor: pointer; 
-            
+            cursor: pointer;    
+        }
+
+        input::placeholder{
+            @media (max-width:768px){
+                @include font-style($size:10px,$bold:bold); 
+            }
+            @media (max-width:320px){
+                @include font-style($size:8px,$bold:bold); 
+            }
         }
     }
 
@@ -71,17 +88,25 @@
     }
 
     &__booking-date{
-        @include display-flex($justify:space-between, $align:center);
+        @include display-flex($justify:space-between);
         width: 100%;
 
-        .date__form{
-            width: 35%;
+        @media (max-width:768px){
+            @include display-flex($direction:column);   
+        }
 
+        .date__form{
+            width: 100%;
+            max-width: 200px;
+
+            @media (max-width:768px){
+                max-width: 135px;
+                margin-bottom: 10px;
+            }
             .dates{
                 
               label{
                 display:block;
-                margin-left: 10px;
               }
     
               input{
@@ -102,6 +127,9 @@
 
     &__price{
        
+        @media (max-width:768px){
+            max-width: 150px;
+        }
 
         .currency{
             @include border-style (1px solid $main-border-color);
@@ -139,15 +167,22 @@
             @include border-style($radius:5px);
             
             width: 20%;
+            max-width: 150px;
+            min-width: 70px;
             padding:10px;
             margin-top: 15px;
             outline: none;
             cursor: pointer;
             background-color: $main-bg;
+
+            @media (max-width:768px){
+                @include font-style($size:11px);
+                padding:5px;
+            }
         }  
           
         .newTour__create-btn:hover{
-            @include font-style($size:14px, $color:$elements-bg, $family:$main-fonts, $spacing:.5px);
+            @include font-style($color:$elements-bg, $family:$main-fonts);
             background-color: $btn-color-hover-hotels;
         }
     }

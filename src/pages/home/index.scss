@@ -3,4 +3,8 @@
 
 .cards__container{
     @include display-flex()
+    
+    @media (max-width:375px){
+        @include display-flex($direction:column);
+    }
 }

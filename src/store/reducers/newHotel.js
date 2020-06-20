@@ -1,4 +1,4 @@
-import { GET_HOTELS_SUCCESS, GET_HOTELS_FAIL } from '../actions/hotels';
+import { CREATE_HOTELS_SUCCESS, CREATE_HOTELS_FAIL } from '../actions/newHotel';
 
 const initialState = {
   hotels: [],
@@ -6,10 +6,9 @@ const initialState = {
 
 const hotelsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_HOTELS_SUCCESS: {
+    case CREATE_HOTELS_SUCCESS: {
       return {
         ...state,
-        hotels: action.payload,
       };
     }
     default: return state;

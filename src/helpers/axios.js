@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
-const baseURL = 'http://ec2-15-236-141-183.eu-west-3.compute.amazonaws.com:3000/';
+const baseURL = 'http://b378ae1395ba.ngrok.io/';
 const instance = axios.create({
   baseURL,
   headers: {

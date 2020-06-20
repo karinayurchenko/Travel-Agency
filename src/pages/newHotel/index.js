@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Images from '../../constants/imgNewHotel';
 import './index.scss';
+import { createHotel } from '../../store/actions/newHotel';
 
 const NewHotel = () => {
   const [formData, setformData] = useState({});
+  const dispatch = useDispatch();
 
   const updateDataGeneral = (name, value) => {
     setformData({
@@ -35,7 +38,7 @@ const NewHotel = () => {
 
   const confirm = (e) => {
     e.preventDefault();
-    console.log(formData);
+    dispatch(createHotel(formData));
   };
 
   return (
@@ -57,7 +60,7 @@ const NewHotel = () => {
               </div>
               <div className="city__region">
                 <input onChange={(e) => updateAddress('city', e.target.value)} type="text" name="city" placeholder="City*" className="city_input" required />
-                <input onChange={(e) => updateAddress('region', e.target.value)} type="text" name="region" placeholder="Region/State" className="region_input" required />
+                <input onChange={(e) => updateAddress('state', e.target.value)} type="text" name="region" placeholder="Region/State" className="region_input" required />
               </div>
               <div className="location">
                 <input onChange={(e) => updateAddress('street', e.target.value)} type="text" name="street" placeholder="Street" className="street_input" required />

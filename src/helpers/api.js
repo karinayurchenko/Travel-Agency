@@ -11,7 +11,7 @@ export default {
   hotel: {
     getAll: () => Axios.get('/profile'),
     createHotel: (data) => Axios.post('/hotel', data),
-  },
+  }, 
   profile: {
     changeBasicInfo: (data) => Axios.put('/users', data),
     changeCompanyInfo: (data) => Axios.put('/users/password', data),

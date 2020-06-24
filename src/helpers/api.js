@@ -9,8 +9,9 @@ export default {
     getCompany: (id) => Axios.get(`/users/${id}/company`),
   },
   hotel: {
-    getAll: () => Axios.get('/profile'),
+    getAll: () => Axios.get('/hotel'),
     createHotel: (data) => Axios.post('/hotel', data),
+    uploadImage: (hotelId, file) => Axios.uploadFile(`image/upload/${hotelId}`, file),
   }, 
   profile: {
     changeBasicInfo: (data) => Axios.put('/users', data),

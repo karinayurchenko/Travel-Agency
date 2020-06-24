@@ -4,7 +4,7 @@ import './index.scss';
 const Hotel = ({ data }) => (
   <div className="hotel__item">
     <div className="hotel__img">
-      <img src={data.url} alt="" />
+      <img src={data.mainImg} alt="" />
     </div>
     <div className="hotel__details">
       <div className="hotel__title">{data.name}</div>

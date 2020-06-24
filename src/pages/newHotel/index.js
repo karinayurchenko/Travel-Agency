@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Images from '../../constants/imgNewHotel';
 import './index.scss';
@@ -6,7 +6,9 @@ import { createHotel } from '../../store/actions/newHotel';
 
 const NewHotel = () => {
   const [formData, setformData] = useState({});
+  const [images, setImages] = useState([]);
   const dispatch = useDispatch();
+  const [fileObj, setFileObj] = useState([]);
 
   const updateDataGeneral = (name, value) => {
     setformData({
@@ -38,8 +40,41 @@ const NewHotel = () => {
 
   const confirm = (e) => {
     e.preventDefault();
-    dispatch(createHotel(formData));
+    const files = Array.from(fileObj[0]).map((el) => {
+      const uploadedData = new FormData();
+      uploadedData.append('file', el);
+      return uploadedData;
+    });
+    dispatch(createHotel(formData, files));
   };
+
+  useEffect(() => {
+    if (!fileObj || !fileObj[0]) {
+      return;
+    }
+    // const newImages = [];
+    // for (let i = 0; i < fileObj[0].length; i++) {
+    //   newImages.push({
+    //     url: URL.createObjectURL(fileObj[0][i]),
+    //   });
+    // }
+    const newImages = Array.from(fileObj[0]).map((el) => ({
+      url: URL.createObjectURL(el),
+    }));
+
+    setImages(
+      images.concat(newImages),
+    );
+  }, [fileObj && fileObj[0]]);
+
+  const uploadMultipleFiles = (e) => {
+    setFileObj([e.target.files]);
+    //   this.fileArray.push(URL.createObjectURL(this.fileObj[0][i]));
+    // this.setState({ file: this.fileArray });
+  };
+
+  console.log(images);
+  console.log(fileObj.current);
 
   return (
     <div className="newHotel">
@@ -74,7 +109,7 @@ const NewHotel = () => {
           </div>
 
           <div className="hotel__imgs">
-            {Images.map((el) => (
+            {images.map((el) => (
               <div className="img__block">
                 <i className="far fa-window-close cancelIcon" />
                 <img src={el.url} className="cancelImg" alt="" />
@@ -83,7 +118,8 @@ const NewHotel = () => {
           </div>
 
           <div className="upload__btn">
-            <button type="submit" className="upload__imgs"> Upload Images</button>
+            {/* <button type="submit" className="upload__imgs"> Upload Images</button> */}
+            <input type="file" name="fileFind" onChange={uploadMultipleFiles} id="fileFind" multiple />
           </div>
           <div className="newHotel__btn">
             <button type="submit" className="confirm__btn">Confirm</button>

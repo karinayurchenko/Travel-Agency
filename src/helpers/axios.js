@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
-export const baseURL = 'http://ec2-15-236-141-183.eu-west-3.compute.amazonaws.com:3000/';
+export const baseURL = 'http://localhost:3000/';
 const instance = axios.create({
   baseURL,
   headers: {
@@ -46,8 +46,8 @@ instance.interceptors.response.use((response) => response, (error) => {
     // }, () => {
     //   window.location = '/login';
     // });
-  } else {
-    return Promise.reject(error);
+  } else { 
+    return Promise.reject(error.response.data.message);
   }
 });
 

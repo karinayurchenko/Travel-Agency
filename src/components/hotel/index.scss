@@ -5,13 +5,16 @@
 .hotel__item{
     @include display-flex();
     @include border-style( $border-top: 1px dotted $main-border-color, $border-bottom: 1px dotted $main-border-color);
-    margin: 30px 0px 30px 50px;
+    padding:30px;
+    width: 100%;
     
     .hotel__img{
-        
+       width: 350px;
+
        img{
          display: block;
          width: 100%;
+         min-height: 150px;
          object-fit: cover;
          object-position: center; 
         }
@@ -20,8 +23,8 @@
     .hotel__details{
         @include display-flex($direction:column);
         @include font-style($size:17px, $color:black, $family:$fonts);
-        width: 60%;
-        padding-left: 15px ;
+        width: 100%;
+        padding: 15px ;
         text-align: left;
         background-color: $elements-bg;
         
@@ -50,15 +53,14 @@
 
     .hotel__about{
         @include font-style($size:22px, $bold:700, $family:$fonts);  
-       
-        width: 20%;
+        min-width: 200px;
         padding-top: 50px;
 
      .btn{
         @include font-style($size:10px, $color:$btn-color-tours, $bold:600, $family:$fonts, $spacing:.5px);
         @include border-style (1px solid $btn-color-tours);
         @include border-style($radius:10px);
-        width: 50%;
+        max-width:115px;
         padding:10px;
         margin-top: 30px;
         outline: none;
@@ -66,7 +68,7 @@
         cursor: pointer;
         background-color: $main-bg;
 
-       }  
+       }   
       
        .btn:hover{
         @include font-style($size:10px, $color:$elements-bg, $bold:600, $family:$fonts, $spacing:.5px);

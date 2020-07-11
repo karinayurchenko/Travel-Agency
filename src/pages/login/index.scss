@@ -15,7 +15,7 @@
       min-height: 100vh;
       object-fit: cover;
       object-position: center;
-    }
+    } 
   }
   &__form{
     @include display-flex($direction:column);

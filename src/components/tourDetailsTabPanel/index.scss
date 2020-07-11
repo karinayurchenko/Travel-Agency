@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+.tabPanel{
+    @include display-flex($direction:column);
+    @include font-style($size:14px, $color:black, $bold:400, $family:$main-fonts);
+    text-align: left; 
+    max-width: 100%;
+    padding:20px;
+    background-color: $elements-bg;
+    margin-top:20px;
+
+
+    &__header{
+        @include border-style($border-bottom: 1px solid rgba(75, 74, 74, 0.836))
+        @include font-style($bold:bold);
+   
+        .tabPanel__inner{
+            @include display-flex($justify:space-between);
+            width: 100%;
+            max-width: 350px;
+
+            .tabPanelItem{
+                width: 100%;
+                padding: 5px 5px 0 5px;
+                text-align: center; 
+
+                &__label{
+                    padding: 3px;
+                    
+                }
+
+                &__status{
+                    background-color: $icons-color;
+                    min-height: 5px;
+                }
+            }
+
+            .tabPanelItem:hover{
+                @include font-style($size:15px,  $bold:bold);
+                text-transform: uppercase;
+            }
+        }
+
+    }
+}

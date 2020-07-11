@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+.tabPanel__info{
+    @include font-style($size:14px, $color:black, $family:$main-fonts);
+    background-color: $elements-bg;
+    width: 100%;
+    box-sizing: border-box;
+
+    .infoBlock{
+        @include display-flex();
+        text-align: left;
+        min-width: 200px;
+        width: 100%;
+        padding: 5px;
+    
+        
+        .infoBlockLabel{
+            @include font-style($bold:bold);
+            width: 70px;
+            margin-right: 25px;
+        }
+
+        .infoBlockValue{
+
+            padding: 5px;
+            
+        }
+    }
+}

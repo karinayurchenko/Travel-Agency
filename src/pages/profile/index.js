@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   inputs, details, addresses, cities,
 } from '../../constants/profile';
-import { uploadProfile, updateBasicInfo, changeProfile } from '../../store/actions/profile';
+import {
+  uploadProfile, updateBasicInfo, changeProfile, updateCompanyInfo, saveCompanyInfo,
+} from '../../store/actions/profile';
 import Spinner from '../../components/general/spinner';
 import './index.scss';
 
@@ -13,6 +15,8 @@ const Profile = () => {
   const user = useSelector((state) => state.profile.user);
   const company = useSelector((state) => state.profile.company);
   const loading = useSelector((state) => state.profile.loading);
+
+  console.log(company);
 
   const onChangeBasicHandle = (name, value) => {
     dispatch(updateBasicInfo({
@@ -35,6 +39,33 @@ const Profile = () => {
     );
   }
 
+  const submitCompanyInfo = (e) => {
+    e.preventDefault();
+    dispatch(updateCompanyInfo({
+      id: company.id,
+      contactEmail: company.contactEmail,
+      name: company.name,
+      address: {
+        country: 'USA',
+        city: company.city,
+        state: company.state,
+        street: company.address1,
+        address2: company.address2,
+        zip: company.zip,
+        location: {
+          latitude: '0',
+          longtitude: '0',
+        },
+      },
+    }));
+  };
+
+  const onChangeCompanyHandle = (name, value) => {
+    dispatch(saveCompanyInfo({
+      [name]: value,
+    }));
+  };
+
   return (
     <div className="profile">
       <div className="profile__section">
@@ -54,13 +85,13 @@ const Profile = () => {
 
       <div className="profile__section">
         <div className="section__title">Company Info</div>
-        <form className="company__details">
+        <form className="company__details" onSubmit={submitCompanyInfo}>
           {details.map((el) => (
             <div className="input__inner">
               <label>
                 {el.label}
               </label>
-              <input defaultValue={company[el.name]} type={el.type} name={el.name} placeholder={el.placeholder} required />
+              <input onChange={(e) => onChangeCompanyHandle(el.name, e.target.value)} defaultValue={company[el.name]} type={el.type} name={el.name} placeholder={el.placeholder} required />
             </div>
           ))}
 
@@ -70,7 +101,7 @@ const Profile = () => {
                 <label>
                   {el.label}
                 </label>
-                <input defaultValue={company.address[el.name]} type={el.type} name={el.name} placeholder={el.placeholder} />
+                <input onChange={(e) => onChangeCompanyHandle(el.name, e.target.value)} defaultValue={company.address[el.name]} type={el.type} name={el.name} placeholder={el.placeholder} />
               </div>
             ))}
           </div>
@@ -79,11 +110,11 @@ const Profile = () => {
             {company.address && cities.map((el) => (
               <div className="input__inner">
                 <label>{el.label}</label>
-                <input defaultValue={company.address[el.name]} type={el.type} name={el.name} />
+                <input onChange={(e) => onChangeCompanyHandle(el.name, e.target.value)} defaultValue={company.address[el.name]} type={el.type} name={el.name} />
               </div>
             ))}
           </div>
-          <button type="button" className="section__btn">Sign in</button>
+          <button type="submit" className="section__btn">Save</button>
         </form>
       </div>
     </div>

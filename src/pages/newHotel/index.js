@@ -1,14 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, {
+  useState, useRef, useEffect,
+} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch, useSelector } from 'react-redux';
 import Images from '../../constants/imgNewHotel';
-import './index.scss';
 import { createHotel } from '../../store/actions/newHotel';
+import Spinner from '../../components/general/spinner';
+import './index.scss';
 
 const NewHotel = () => {
   const [formData, setformData] = useState({});
   const [images, setImages] = useState([]);
   const dispatch = useDispatch();
   const [fileObj, setFileObj] = useState([]);
+  const loading = useSelector((state) => state.newHotel.loading);
+ 
 
   const updateDataGeneral = (name, value) => {
     setformData({
@@ -73,8 +80,6 @@ const NewHotel = () => {
     // this.setState({ file: this.fileArray });
   };
 
-  console.log(images);
-  console.log(fileObj.current);
 
   return (
     <div className="newHotel">
@@ -119,7 +124,7 @@ const NewHotel = () => {
 
           <div className="upload__btn">
             {/* <button type="submit" className="upload__imgs"> Upload Images</button> */}
-            <input type="file" name="fileFind" onChange={uploadMultipleFiles} id="fileFind" multiple />
+            <input type="file" name="fileFind" onChange={uploadMultipleFiles} id="fileFind" multiple required />
           </div>
           <div className="newHotel__btn">
             <button type="submit" className="confirm__btn">Confirm</button>
@@ -130,6 +135,28 @@ const NewHotel = () => {
           <div className="required">*required fields</div>
         </div>
       </form>
+      {loading
+        ? (
+          <div className="spinnerBackground">
+            <div className="spinner">
+              <Spinner />
+            </div>
+          </div>
+        ) : null}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <ToastContainer />
+
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import {
-  UPLOAD_PROFILE, UPLOAD_PROFILE_REQUEST, UPLOAD_PROFILE_FAIL, CHANGE_PROFILE_BASIC, UPDATE_PROFILE_BASIC,
+  UPLOAD_PROFILE, UPLOAD_PROFILE_REQUEST, UPLOAD_PROFILE_FAIL, CHANGE_PROFILE_BASIC, UPDATE_PROFILE_BASIC, UPDATE_COMPANY_INFO,
 } from '../actions/profile';
 
 const initialState = {
@@ -15,8 +15,8 @@ const profileReducer = (state = initialState, action) => {
     case UPLOAD_PROFILE: {
       return {
         ...state,
-        user: action.payload[0].data,
-        company: action.payload[1].data,
+        user: action.payload[0] && action.payload[0].data || state.user,
+        company: action.payload[1] && action.payload[1].data || state.company,
         loading: false,
       };
     }
@@ -43,8 +43,13 @@ const profileReducer = (state = initialState, action) => {
         user: { ...state.user, ...action.payload },
       };
     }
+    case UPDATE_COMPANY_INFO: {
+      return {
+        ...state,
+        company: { ...state.company, ...action.payload },
+      };
+    }
     default: return state;
   }
 };
-
 export default profileReducer;

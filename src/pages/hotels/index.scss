@@ -27,7 +27,7 @@
 
     .find__hotel{
         @include display-flex();
-        width: 50%;
+        width: 50%; 
 
         input{
             @include border-style (1px solid $main-border-color, $radius:5px);

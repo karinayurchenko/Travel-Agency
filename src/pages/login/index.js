@@ -45,7 +45,7 @@ const Login = () => {
           </div>
           <div className="login__remember">
             <div className="login__inner-remember">
-              <label>
+              <label> 
                 <input type="radio" name="remember" />
                 <span>Remember me</span>
               </label>

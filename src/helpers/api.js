@@ -15,6 +15,7 @@ export default {
   }, 
   profile: {
     changeBasicInfo: (data) => Axios.put('/users', data),
-    changeCompanyInfo: (data) => Axios.put('/users/password', data),
+    createCompanyInfo: (data) => Axios.post('/companies', data),
+    updateCompanyInfo: (data, id) => Axios.put(`/companies/${id}`, data)
   },
-}; 
+};

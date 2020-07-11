@@ -5,7 +5,7 @@ import Logo from '../../../assets/img/logo.png';
 import { toggleSidebar } from '../../../store/actions/general';
 import Links from '../../../constants/sidebar';
 import './index.scss';
-
+ 
 const Sidebar = () => {
   const opened = useSelector((state) => state.general.sidebarOpened);
   const dispatch = useDispatch();

@@ -5,6 +5,7 @@ import ImgBg from '../../assets/img/register.png';
 import Details from '../../constants/register';
 import Validator from '../../helpers/validator';
 import { registerUser } from '../../store/actions/user';
+import PasswordInput from '../../components/password';
 import './index.scss';
 
 const Register = () => {
@@ -23,6 +24,7 @@ const Register = () => {
     confirmPassword: null,
   });
 
+
   const checkValidateForm = () => {
     setError({
       email: formData.email !== null && (Validator.isEmailValid(formData.email) ? null : 'valid email is required'),
@@ -31,7 +33,7 @@ const Register = () => {
       password: formData.password !== null && (Validator.isPasswordValid(formData.password) ? null : 'valid password is required'),
       confirmPassword: formData.confirmPassword !== null && (formData.password === formData.confirmPassword ? null : 'Password not matching'),
     });
-  console.log(formData.password === formData.confirmPassword)  
+    console.log(formData);
   };
 
   const handleChanges = (name) => (e) => {
@@ -50,8 +52,7 @@ const Register = () => {
     dispatch(registerUser(formData, history));
   };
 
-
-  return ( 
+  return (
     <div className="register">
       <div className="register__img">
         <img src={ImgBg} alt="nature" />
@@ -64,7 +65,7 @@ const Register = () => {
         <form className="register__details" onSubmit={register}>
           {Details.map((el) => (
             <div className="register__inner">
-              <input type={el.type} name={el.name} placeholder={el.placeholder} required onChange={handleChanges(el.name)} />
+              {el.type === 'password' ? <PasswordInput type={el.type} name={el.name} placeholder={el.placeholder} required onChange={handleChanges(el.name)} /> : <input type={el.type} name={el.name} placeholder={el.placeholder} required onChange={handleChanges(el.name)} />}
               <div>{error[el.name]}</div>
             </div>
           ))}

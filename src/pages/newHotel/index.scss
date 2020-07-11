@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 .newHotel{
+    @include position(relative);
     width: 100%;
     min-width: 200px;
     padding:25px;
@@ -10,6 +11,16 @@
     margin: 5px;
     background-color: $elements-bg;
 
+    .spinnerBackground{
+        @include position(fixed, 0,0,0,0);
+        background-color: rgba(128, 128, 128, 0.425);
+
+        .spinner{
+            @include position(absolute,$top:30%,$left:50%);
+            transform: translate(-50%); 
+        }
+    }
+    
     &__content{
         @include font-style($size:20px, $color:$hotels-fonts-color, $bold:bold, $family:$main-fonts);
         @include display-flex();
@@ -215,3 +226,4 @@
         }
     }
 }
+

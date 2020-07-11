@@ -7,7 +7,7 @@
     max-width: 100%;
     height: 45px;
     max-height: 100%;
-    padding: 10px 0 10px 15px;
+    padding: 10px 10px 10px 15px;
     background-color: $elements-bg;
 
     &__inner{
@@ -24,7 +24,6 @@
             @include font-style($color:$icons-color);  
             min-width: 70px;
             max-width: 100%;
-            padding-right: 10px;
 
                 .rightBlock__icons{
                     min-width: 40px;
@@ -45,7 +44,7 @@
                      object-position: center;
                      margin-right: 15px;
                         }
-                    }
+                    } 
                 &__username{
                     @include font-style($size:17px, $color:$main-color-text, $family:$main-fonts);  
 

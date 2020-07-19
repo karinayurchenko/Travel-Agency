@@ -129,6 +129,29 @@
                 width: 100%;
                 
 
+                .forUpload {
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    z-index: -1;
+                }
+
+                .forUpload  + label {
+                    @include font-style($size:15px, $color:$btn-color, $family:$main-fonts,$spacing:.5px);
+                    padding:5px;
+                    color: white;
+                    background-color: $hotels-fonts-color;
+                    border-radius: 10px;
+                    display: inline-block;
+                }
+
+                .forUpload:focus + label,
+                .forUpload + label:hover {
+                background-color:$icons-color;
+                }
+                
+
                 .upload__imgs{
                     @include font-style($size:11px, $color:$btn-color, $family:$main-fonts,$spacing:.5px);
                     max-width:100px;

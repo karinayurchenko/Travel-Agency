@@ -12,6 +12,7 @@ import Hotels from './pages/hotels';
 import NewTour from './pages/newTour';
 import NewHotel from './pages/newHotel';
 import TourDetails from './pages/tourDetails';
+import HotelDetails from './pages/hotelDetails';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                 <Route exact path="/newTour"><NewTour /></Route>
                 <Route exact path="/newHotel"><NewHotel /></Route>
                 <Route exact path="/tourDetails"><TourDetails /></Route>
+                <Route exact path="/hotelDetails"><HotelDetails /></Route>
               </Switch>
             </div>
           </div>

@@ -13,7 +13,7 @@
 
 
     &__header{
-        @include border-style($border-bottom: 1px solid rgba(75, 74, 74, 0.836))
+        @include border-style($border-bottom: 1px solid rgba(75, 74, 74, 0.836));
         @include font-style($bold:bold);
    
         .tabPanel__inner{
@@ -24,7 +24,7 @@
             .tabPanelItem{
                 width: 100%;
                 padding: 5px 5px 0 5px;
-                text-align: center; 
+                text-align: center;  
 
                 &__label{
                     padding: 3px;

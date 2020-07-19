@@ -1,0 +1,140 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+.hotelDetails__container{
+    padding: 20px;
+
+    .hotelDetails__header{
+        @include display-flex($justify:space-between);
+    
+        .hotelName{
+            @include font-style($size:18px, $color:$login-color-text-input);
+            border: 1px solid $hotels-fonts-color;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .hotelDetails__buttons{
+            
+
+            .hotelDetails__btn {
+                @include font-style($size:11px, $color:$btn-color, $family:$main-fonts,$spacing:.5px);
+                @include border-style($radius:3px);
+                min-width: 60px;
+                margin-left: 1px;
+                padding:8px;
+                outline: none;
+                border-color: transparent;
+                cursor: pointer;
+                background-color: $login-color-text-input;
+                
+            }
+
+            .activeBtn{
+                background-color: $bg-btn-submit;
+            }
+
+            .hotelDetails__btn:hover{
+                @include font-style($size:11px, $color:$elements-bg, $family:$main-fonts, $spacing:.5px);
+                background-color: $bg-btn-submit-hover;
+            }
+        }
+    }
+
+    .hotelDetails__imgs{
+       @include display-flex($justify:space-between,$wrap:wrap);
+       width: 100%;
+       margin-bottom: 15px;
+
+       @media (max-width:375px){
+       @include display-flex($direction:column,$wrap:wrap);}
+        
+        .hotelDetailsImgs{
+        width: 30%;
+        margin: 5px 0;
+
+        @media (max-width:375px){
+        width: 100%;}
+
+            .hotelImage{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    
+    .block__title{
+        @include display-flex();
+        @include font-style($size:22px, $color:$hotels-fonts-color, $bold:400, $family:$main-fonts, $spacing:.2px);
+        text-align: left;
+        padding: 5px;
+    
+
+        .roomNumber{
+            @include font-style($size:18px, $color:$login-color-text-input);
+            border: 1px solid $hotels-fonts-color;
+            width: 150px;
+            padding: 5px;
+            margin-left: 15px;
+        }
+    }
+
+     .descriptionBlock{
+        margin-bottom: 5px;
+        margin-bottom: 15px;
+        
+        textarea{
+        width: 100%;
+        min-width: 100%;
+        min-height: 100px;
+        max-width: 100%;
+        outline: none;
+        box-sizing: border-box;
+        }
+    }
+
+    .locationBlock{
+        @include display-flex($direction:column); 
+        @include font-style($size:22px, $color:$hotels-fonts-color, $bold:400, $family:$main-fonts, $spacing:.2px);
+        text-align: left;
+        padding: 5px;
+        margin-bottom: 15px;
+
+        .locationBlock_label{
+         margin-bottom: 15px; 
+        }
+
+            .location_container{
+                padding: 0 200px 0 200px;
+                width: 50%;
+
+                .hotelDetails__location{
+                @include display-flex($justify:space-between); 
+                @include font-style($size:18px, $color:black, $bold:400);
+                
+                
+                .hotelLocationLabel{
+        
+                }
+                
+                .hotelLocationValue{
+                    @include font-style($size:18px, $color:$login-color-text-input);
+                    border: 1px solid $hotels-fonts-color;
+                    width: 150px;
+                    padding: 5px;
+                    margin-bottom: 10px;
+                }
+            }  
+        }  
+    }
+    .hotelDetails__map{
+        
+        #hotelDetails-world-map{
+        width: 100%;
+        height: 500px;
+        }
+    }   
+}

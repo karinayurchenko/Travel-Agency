@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'; 
 import Api from '../../helpers/api';
 
 export const CREATE_HOTELS_SUCCESS = 'GET_HOTELS_SUCCESS';

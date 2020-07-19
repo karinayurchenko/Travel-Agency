@@ -7,7 +7,17 @@
     height: 30px;
     margin: 30px 20px 30px 50px;
 
-    .add__btn{
+    .spinnerBackground{
+        @include position(fixed, 0,0,0,0);
+        background-color: rgba(128, 128, 128, 0.425);
+
+        .spinner{
+            @include position(absolute,$top:30%,$left:50%);
+            transform: translate(-50%); 
+        }
+    }
+
+    .add__btn{ 
         @include font-style($size:9px, $color:$btn-color-tours, $bold:600, $family:$fonts, $spacing:.5px);
         @include border-style (1px solid $btn-color-tours);
         @include border-style($radius:10px);
@@ -25,25 +35,25 @@
         background-color: $btn-color-hover-hotels;
     }
 
-    .find__hotel{
-        @include display-flex();
-        width: 50%; 
+    // .find__hotel{
+    //     @include display-flex();
+    //     width: 50%; 
 
-        input{
-            @include border-style (1px solid $main-border-color, $radius:5px);
-            @include font-style($size:12px, $color:$login-color-text-input, $family:$main-fonts, $spacing:1px);
-            padding: 5px;
-            width: 100%;
-            box-sizing: border-box;
-            outline: none;
-            cursor: pointer;
-          }
+    //     input{
+    //         @include border-style (1px solid $main-border-color, $radius:5px);
+    //         @include font-style($size:12px, $color:$login-color-text-input, $family:$main-fonts, $spacing:1px);
+    //         padding: 5px;
+    //         width: 100%;
+    //         box-sizing: border-box;
+    //         outline: none;
+    //         cursor: pointer;
+    //       }
 
-        .icon{
-         @include font-style($size:14px, $color:$login-color-text-input, $family:$main-fonts);
-          transform: translate(526px, 7px);
-        }
+    //     .icon{
+    //      @include font-style($size:14px, $color:$login-color-text-input, $family:$main-fonts);
+    //       transform: translate(526px, 7px);
+    //     }
 
-    }
+    // }
         
 }

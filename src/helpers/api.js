@@ -12,6 +12,7 @@ export default {
     getAll: () => Axios.get('/hotel'),
     createHotel: (data) => Axios.post('/hotel', data),
     uploadImage: (hotelId, file) => Axios.uploadFile(`image/upload/${hotelId}`, file),
+    findHotel: (target) => Axios.get (`/hotel/find/search=${target}`),
   }, 
   profile: {
     changeBasicInfo: (data) => Axios.put('/users', data),

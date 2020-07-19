@@ -6,7 +6,7 @@ import './index.scss';
 
 const TourDetails = () => {
   return(
-  <div className='tourDetals__container'>
+  <div className='tourDetails__container'>
     <TourHeader />
     <TabPanel />
     <TabPanelContent />
